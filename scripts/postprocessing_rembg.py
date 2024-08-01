@@ -63,7 +63,7 @@ class ScriptPostprocessingUpscale(scripts_postprocessing.ScriptPostprocessing):
 
         pp.image = rembg.remove(
             pp.image,
-            session=rembg.new_session(model),
+            session=rembg.new_session(model, providers=['CPUExecutionProvider']),
             only_mask=return_mask,
             alpha_matting=alpha_matting,
             alpha_matting_foreground_threshold=alpha_matting_foreground_threshold,
